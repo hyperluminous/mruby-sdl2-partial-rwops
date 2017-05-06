@@ -4,6 +4,8 @@ MRuby::Gem::Specification.new('mruby-sdl2-partial-rwops') do |spec|
   spec.version = '0.1.0'
 
   spec.add_dependency('mruby-sdl2')
+  spec.add_dependency('mruby-sdl2-image')
+  spec.add_dependency('mruby-sdl2-mixer')
 
   if build.kind_of?(MRuby::CrossBuild)
     # nop
