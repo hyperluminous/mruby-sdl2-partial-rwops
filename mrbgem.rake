@@ -1,6 +1,6 @@
 MRuby::Gem::Specification.new('mruby-sdl2-partial-rwops') do |spec|
   spec.license = 'MIT'
-  spec.author = 'ecirmoa'
+  spec.author = 'kabies'
   spec.version = '0.1.0'
 
   spec.add_dependency('mruby-sdl2')
