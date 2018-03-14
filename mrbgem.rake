@@ -7,10 +7,9 @@ MRuby::Gem::Specification.new('mruby-sdl2-partial-rwops') do |spec|
   spec.add_dependency('mruby-sdl2-image')
   spec.add_dependency('mruby-sdl2-mixer')
 
-  if build.kind_of?(MRuby::CrossBuild)
-    # nop
-  else
+  if not RUBY_PLATFORM.include?('darwin') and not build.kind_of?(MRuby::CrossBuild)
     spec.cc.flags << '`sdl2-config --cflags`'
     spec.linker.flags_before_libraries << '`sdl2-config --libs`'
+    spec.linker.libraries += %w(SDL2_image SDL2_mixer)
   end
 end
